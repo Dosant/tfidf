@@ -10,3 +10,4 @@ docs
 **/.tmp/
 **/dist/
 npm-debug.log
+!tfidf-clint/build/**/*

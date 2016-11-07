@@ -8,6 +8,7 @@ function getDocumentUrl(id) {
 
 const fetch = require('node-fetch');
 const cheerio = require('cheerio');
+const sanitizeHtml = require('sanitize-html');
 
 /*
     Fetch Meduza Document
@@ -19,7 +20,11 @@ function fetchDocument(id) {
         .then((res) => {
             console.log('Success Fetching: ', id);
             const document = res.root;
-            const $ = cheerio.load(document.content.body);
+            const $ = cheerio.load(
+                sanitizeHtml(document.content.body, {
+                    allowedTags: ['p'],
+                    allowedAttributes: false
+                }));
             const content = $.text().replace(/\n/g, ' ');
             return {
                 url: document.url,

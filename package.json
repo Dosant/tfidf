@@ -18,7 +18,6 @@
     "natural": "^0.4.0",
     "node-fetch": "^1.6.3",
     "node-read": "^0.1.7",
-    "promise-queue": "^2.2.3",
     "stopword": "^0.1.1"
   }
 }

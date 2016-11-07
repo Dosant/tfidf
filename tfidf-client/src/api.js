@@ -10,5 +10,16 @@ export function tfidf(urls) {
         },
         body: JSON.stringify({urls: urls})
     })
-    .then((res) => res.json());
+    .then(checkStatus);
+}
+
+function checkStatus(response) {
+    if (response.status >= 200 && response.status < 300) {
+        return response.json();
+    } else {
+        return response.json()
+            .then((err) => {
+                return Promise.reject(err);
+            });
+    }
 }

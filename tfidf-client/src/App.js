@@ -4,7 +4,7 @@ import renderHTML from 'react-render-html';
 import Collapsible from 'react-collapsible';
 import Spinner from './Spinner/Spinner';
 import ListTerms from './Components/ListTerms';
-
+import swal from 'sweetalert';
 
 class App extends Component {
     constructor(props) {
@@ -42,6 +42,10 @@ class App extends Component {
                     tfidf: tfidfRes,
                     isLoading: false
                 });
+            })
+            .catch((err) => {
+                this.showErrorMessage();
+                this.reset();
             });
     }
 
@@ -106,7 +110,7 @@ class App extends Component {
                                                 </ul>
                                             </div>
                                             <h5>Top-10 Слов</h5>
-                                            <ListTerms listTerms={res.listTerms}/>
+                                            <ListTerms listTerms={res.listTerms} />
                                             <h5>Статья</h5>
                                             {renderHTML(res.tfidfContent)}
                                         </Collapsible>
@@ -118,6 +122,15 @@ class App extends Component {
                 <Spinner loading={this.state.isLoading} />
             </div>
         );
+    }
+
+    showErrorMessage(msg) {
+        swal({
+            title: "Ошибка!",
+            text: msg || "Что-то пошло не так.",
+            type: "error",
+            confirmButtonText: "Понятно.."
+        });
     }
 }
 

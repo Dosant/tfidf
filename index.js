@@ -43,6 +43,10 @@ app.post('/tfidf', (req, res, next) => {
             });
 
             res.send(tfidfResult);
+        })
+        .catch((err) => {
+            res.status(500);
+            res.json(err);
         });
 });
 

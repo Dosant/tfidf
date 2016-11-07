@@ -78,5 +78,7 @@ app.post('/processDocuments', (req, res, next) => {
 });
 
 const path = require('path');
+app.use('/data', express.static('data/'));
 app.use('/', express.static('tfidf-client/build/'));
+
 

@@ -1,0 +1,92 @@
+body {
+    background-color: #EEE;
+    font-family: 'Proxima Nova', 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+header {
+    margin-bottom: 40px;
+    text-align: center;
+    background-color: white;
+    padding: 16px 0;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.center-button-container {
+    text-align: center;
+}
+
+.rigth-button-container {
+    text-align: right;
+}
+
+.btn-m {
+    margin-right: 8px;
+}
+
+.Collapsible {
+    margin: 8px 0;
+    background-color: white;
+}
+
+.Collapsible__contentInner {
+    padding: 16px;
+    border: 1px solid white;
+    border-top: 0;
+}
+
+.Collapsible__contentInner p {
+    margin-bottom: 10px;
+}
+
+.Collapsible__contentInner p:last-child {
+    margin-bottom: 0;
+}
+
+.Collapsible__trigger {
+    display: block;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    padding: 16px;
+    background: #33C3F0;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.Collapsible__trigger:hover {
+    background: #1EAEDB;
+}
+
+.Collapsible__trigger:after {
+    font-family: 'entypo';
+    content: '\e874';
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    display: block;
+    transition: transform 300ms;
+    transform: rotateZ(90deg);
+}
+
+.Collapsible__trigger.is-open:after {
+    transform: rotateZ(270deg);
+}
+
+.btn-icon {
+    position: relative;
+    left: 4px;
+}
+
+.button-primary[disabled],
+.button-primary[disabled]:hover,
+.button-primary[disabled]:focus {
+    background-color: #84D2EB;
+    border-color: #84D2EB;
+}
+
+.content__meta {
+    margin-bottom: 24px;
+    border-bottom: 1px solid #eee;
+}

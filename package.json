@@ -1,0 +1,24 @@
+{
+  "name": "sk1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cheerio": "^0.22.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "lodash": "^4.16.6",
+    "morgan": "^1.7.0",
+    "natural": "^0.4.0",
+    "node-fetch": "^1.6.3",
+    "node-read": "^0.1.7",
+    "promise-queue": "^2.2.3",
+    "stopword": "^0.1.1"
+  }
+}

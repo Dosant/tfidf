@@ -1,0 +1,12 @@
+*.paw
+.idea
+.vscode
+docs
+**/public/
+**/node_modules/
+**/bower_components/
+**/.sass-cache/
+**/.idea/
+**/.tmp/
+**/dist/
+npm-debug.log

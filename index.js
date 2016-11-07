@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({
 app.use(morgan('dev'));
 app.use(cookieParser());
 
-const port = 8100;
+const port = process.env.PORT || 8100;
 app.listen(port, () => {
     console.log(`Express server listening on port ${port}`);
 });

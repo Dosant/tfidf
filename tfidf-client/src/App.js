@@ -5,6 +5,7 @@ import Collapsible from 'react-collapsible';
 import Spinner from './Spinner/Spinner';
 import ListTerms from './Components/ListTerms';
 import swal from 'sweetalert';
+import isUrl from 'is-url';
 
 class App extends Component {
     constructor(props) {
@@ -51,7 +52,7 @@ class App extends Component {
 
     reset() {
         this.setState({
-            urls: ['', ''],
+            urls: [''],
             tfidf: null,
             isLoading: false
         });
@@ -71,7 +72,7 @@ class App extends Component {
                         Сбросить
                         <i className="btn-icon icon-arrows-ccw"></i>
                     </button>
-                    <button className="button-primary" onClick={this.startTfidf.bind(this)} disabled={this.state.urls.length < 2}>
+                    <button className="button-primary" onClick={this.startTfidf.bind(this)} disabled={!this.state.urls.every(isUrl)}>
                         Начать Tf-Idf
                         <i className="btn-icon icon-play"></i>
                     </button>
@@ -81,9 +82,14 @@ class App extends Component {
                         <div className="container">
                             <label>Добавьте ссылки на статьи</label>
                             {this.state.urls.map((url, idx) => {
-                                return (<input key={idx} className="u-full-width" type="text" placeholder="http//enter.article/url"
-                                    value={this.state.urls[idx]}
-                                    onChange={(evt) => this.handleInput(evt, idx)} />);
+                                const isValid = isUrl(this.state.urls[idx]);
+                                return (
+                                    <div key={idx} className="link-input">
+                                        <input className="u-full-width" type="text" placeholder="http//enter.article/url"
+                                            value={this.state.urls[idx]}
+                                            onChange={(evt) => this.handleInput(evt, idx)} />
+                                         { isUrl(this.state.urls[idx]) ? <i className="icon-check"></i> : <i className="icon-block"></i>}
+                                    </div>);
                             })}
                             <div className="center-button-container">
                                 <button onClick={this.addUrl.bind(this)}>

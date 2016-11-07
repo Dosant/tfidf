@@ -118,3 +118,29 @@ header {
     border-color: #888;
     outline: 0;
 }
+
+.sweet-alert .sa-error-container .icon {
+      background-color: #F24C7B;
+}
+
+.link-input {
+    position: relative;
+}
+.link-input i {
+    position: absolute;
+    top: 7px;
+    right: 10px;
+}
+
+.link-input .icon-check {
+    color: #33C3F0;
+}
+
+.link-input .icon-block {
+    color: #F24C7B;
+}
+
+.link-input input[type="text"].invalid:focus {
+    border-color: #F24C7B;
+}
+

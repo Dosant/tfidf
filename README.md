@@ -1,8 +1,8 @@
 # TF-IDF Реализация и Демонстрация
 
 ### Где Посмотреть?
-[Проект](https://tfidftheweb.herokuapp.com)
-[Код](https://github.com/Dosant/tfidf)
+* [Проект](https://tfidftheweb.herokuapp.com)
+* [Код](https://github.com/Dosant/tfidf)
 
 ### Что делает?
 Находит ключевые слова в документе. Можно ввести свой текст, можно указать url на статью.
@@ -38,8 +38,10 @@ X - документов в коллекции, в которых встреча
 То есть задача разделилась на 2 части: tf и idf.
 #### idf
 Нужно было подготовить коллекцию документов, чтобы использовать её для подсчета idf.
-[Исходная коллекция (1000 новостей с медузы)](https://tfidftheweb.herokuapp.com/data/test.json)
-[Обработанная коллекция ({‘основа слова’: ‘сколько документов, в которых она встретилась’})](https://tfidftheweb.herokuapp.com/data/idfData.json)
+
+* [Исходная коллекция (1000 новостей с медузы)](https://tfidftheweb.herokuapp.com/data/test.json)
+* [Обработанная коллекция ({‘основа слова’: ‘сколько документов, в которых она встретилась’})](https://tfidftheweb.herokuapp.com/data/idfData.json)
+
 (*Если видите иероглифы, переключите кодировку в utf-8*)
 
 #### tf
@@ -57,12 +59,12 @@ X - документов в коллекции, в которых встреча
 Готово. Считаем tf.
 
 ### Ссылки
-[wiki](https://en.wikipedia.org/wiki/Tf–idf)
-[Tokenizer](https://github.com/NaturalNode/natural#tokenizers)
-[Stemmer](https://github.com/NaturalNode/natural#stemmers)
-[Stop Words Removal](https://github.com/fergiemcdowall/stopword)
-[Node Read](https://www.npmjs.com/package/node-read)
+* [wiki](https://en.wikipedia.org/wiki/Tf–idf)
+* [Tokenizer](https://github.com/NaturalNode/natural#tokenizers)
+* [Stemmer](https://github.com/NaturalNode/natural#stemmers)
+* [Stop Words Removal](https://github.com/fergiemcdowall/stopword)
+* [Node Read](https://www.npmjs.com/package/node-read)
 
 ### Где Посмотреть?
-[Проект](https://tfidftheweb.herokuapp.com)
-[Код](https://github.com/Dosant/tfidf)
+* [Проект](https://tfidftheweb.herokuapp.com)
+* [Код](https://github.com/Dosant/tfidf)

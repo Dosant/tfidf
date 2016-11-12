@@ -42,6 +42,10 @@ function tf(words) {
             tf[w] = 1;
         }
     });
+
+    Object.keys(tf).forEach((key) => {
+        tf[key] = tf[key] / words.length;
+    });
     return tf;
 }
 

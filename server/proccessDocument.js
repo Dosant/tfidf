@@ -13,15 +13,18 @@ function proccessDocument(document) {
     const removedStopWords = stopword.removeStopwords(tokenized, stopword.ru);
 
     const stemMapping = {};
+    const stemBackMapping = {};
     const stemmed = removedStopWords.map((w) => {
         const stemW = natural.PorterStemmerRu.stem(w);
         stemMapping[w] = stemW;
+        stemBackMapping[stemW] = w;
         return stemW;
     });
     return {
         document: stemmed,
         removedStopWords: removedStopWords,
         stemmMapping: stemMapping,
+        stemBackMapping: stemBackMapping
     };
 }
 

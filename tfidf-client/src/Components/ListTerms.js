@@ -7,7 +7,7 @@ const TermsTable = ({terms, startIndex}) => {
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Основа слова</th>
+                    <th>Слово</th>
                     <th>TF-IDF</th>
                 </tr>
             </thead>

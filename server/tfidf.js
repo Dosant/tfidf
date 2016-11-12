@@ -1,28 +1,4 @@
-// const natural = require('natural');
-// const TfIdf = natural.TfIdf;
-
-/* use natural js tfidf implementaion */
-/* TODO: make custom solution */
-
-// function doTfidf(documents) {
-//     const tfidf = new TfIdf();
-
-//     /* add documents to corpus */
-//     documents.forEach((document) => {
-//         tfidf.addDocument(document.proccesedDocument.document);
-//     });
-
-//     /* proccess tfidf for each document */
-//     return documents.map((document, idx) => {
-//         const listTerms = tfidf.listTerms(idx);
-//         const tfidfTerms = {};
-//         listTerms.forEach((term) => {
-//             tfidfTerms[term.term] = term.tfidf;
-//         });
-
-//         return Object.assign(document, {tfidf: tfidfTerms, listTerms});
-//     });
-// }
+'use strict';
 
 module.exports = doTfidf;
 function doTfidf(documents) {
@@ -31,7 +7,7 @@ function doTfidf(documents) {
         const tfResults = tf(words);
 
         const tfidfResults = {};
-        const listTerms = [];
+        let listTerms = [];
         Object.keys(tfResults)
             .forEach((word) => {
                 const tfidf = tfResults[word] * idf(word);
@@ -40,6 +16,15 @@ function doTfidf(documents) {
             });
 
         listTerms.sort((a, b) => b.tfidf - a.tfidf);
+
+        /* want list terms to be actual words, but not stemmed version */
+        listTerms = listTerms.map((stemmed) => {
+            return {
+                tfidf: stemmed.tfidf,
+                term: document.proccesedDocument.stemBackMapping[stemmed.term],
+                stemmedTerm: stemmed.term
+            };
+        });
 
         document.tfidf = tfidfResults;
         document.listTerms = listTerms;

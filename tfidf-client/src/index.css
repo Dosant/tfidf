@@ -16,6 +16,10 @@ header {
     text-align: center;
 }
 
+.center-button-container button {
+    margin-right: 5px;
+}
+
 .rigth-button-container {
     text-align: right;
 }
@@ -120,12 +124,13 @@ header {
 }
 
 .sweet-alert .sa-error-container .icon {
-      background-color: #F24C7B;
+    background-color: #F24C7B;
 }
 
 .link-input {
     position: relative;
 }
+
 .link-input i {
     position: absolute;
     top: 7px;
@@ -144,3 +149,7 @@ header {
     border-color: #F24C7B;
 }
 
+textarea {
+  resize: none;
+  height: 144px;
+}

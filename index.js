@@ -25,8 +25,18 @@ const tfidf = require('./server/tfidf');
 const renderResults = require('./server/renderResults');
 app.post('/tfidf', (req, res, next) => {
     /* Get Text Content from Urls */
-    const urls = req.body.urls;
-    const textContentPromises = urls.map((url) => htmlCrawler(url));
+    const src = req.body.src;
+    const textContentPromises = src.map((src) => {
+        if (src.type === 'url') {
+            return htmlCrawler(src.src);
+        } else {
+            return {
+                title: src.src.split('.')[0], /* Naive get first sentence :) */
+                content: src.src,
+                document: src.src
+            };
+        }
+    });
     Promise.all(textContentPromises)
         .then((documents) => {
             /* Prepare documents */
